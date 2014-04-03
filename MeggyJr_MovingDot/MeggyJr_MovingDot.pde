@@ -28,7 +28,7 @@ void loop()                     // run over and over again
 DrawPx(xcoord,ycoord,Green);
 DrawPx(xcoord2,ycoord2,12);  
 
-  CheckButtonsPress();
+  CheckButtonsDown();
    if(Button_Up)
       ycoord ++;
    if(Button_Up)
@@ -61,11 +61,16 @@ DrawPx(xcoord2,ycoord2,12);
            xcoord = 0;
         if(xcoord2 < 0)
           xcoord2 = 0;
-     if(Button_A)
-       Tone_Start(17502, 100);
-     
-        
+     if (Button_A)       
+        DrawPx(xcoord,ycoord,12); 
+     else
+        DrawPx(xcoord,ycoord,Green);
+     if(Button_B)
+        DrawPx(xcoord2,ycoord2,Green);
+     else
+        DrawPx(xcoord2,ycoord2,12);
+          
   DisplaySlate();
-  delay(30);
+  delay(250);
   ClearSlate();
 }     //This is the end of the loop
